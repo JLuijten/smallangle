@@ -54,5 +54,35 @@ def tan(number):
     return
 
 
+@smallangle.command()
+@click.option(
+    "-a",
+    "--accuracy",
+    default=0.1,
+    help="maximum allowed difference",
+    show_default=True,
+)
+def approx(accuracy):
+    """finds the largest angle the small-angle approximation holds up to for an accuracy
+
+    Args:
+        accuracy (float): largest allowed difference between x and sin(x)
+    """
+
+    # status is set to 0 when done
+    status = 1
+
+    check_number = 0
+    while status == 1:
+        if abs(check_number - np.sin(check_number)) > accuracy:
+            status = 0
+        else:
+            check_number += 0.001
+
+    print(
+        f"For an accuracy of {accuracy}, the small-angle approximation holds up to x = {check_number:.3} ."
+    )
+
+
 if __name__ == "__main__":
     sin(10)
