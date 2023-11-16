@@ -72,6 +72,7 @@ def approx(accuracy):
     # status is set to 0 when done
     status = 1
 
+    # loops until the difference is bigger than the allowed accuracy
     check_number = 0
     while status == 1:
         if abs(check_number - np.sin(check_number)) > accuracy:
