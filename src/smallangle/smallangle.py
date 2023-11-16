@@ -4,6 +4,7 @@ import pandas as pd
 from numpy import pi
 
 
+# defining the callable function
 @click.group()
 def smallangle():
     pass
@@ -18,7 +19,7 @@ def smallangle():
     show_default=True,
 )
 def sin(number):
-    """get a Dataframe with values from 0 to 2 pi and the sin of the values.
+    """get a Dataframe with values from 0 to 2 pi and the sin of the values, the values are from a chosen sample size.
 
     Args:
         number (int): amount of steps between 0 and 2 pi.
@@ -40,7 +41,7 @@ def sin(number):
     show_default=True,
 )
 def tan(number):
-    """get a Dataframe with values from 0 to 2 pi and the tan of the values.
+    """get a Dataframe with values from 0 to 2 pi and the tan of the values, the values are from a chosen sample size.
 
     Args:
         number (int): amount of steps between 0 and 2 pi.
